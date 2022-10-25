@@ -105,21 +105,21 @@ def web_traffic(short_url):
 import json
 
 def domain_age(domain):
+    return -1
+    # url = domain.split("//")[-1].split("/")[0].split('?')[0]
+    # show = "https://input.payapi.io/v1/api/fraud/domain/age/" + url
+    # r = requests.get(show)
 
-    url = domain.split("//")[-1].split("/")[0].split('?')[0]
-    show = "https://input.payapi.io/v1/api/fraud/domain/age/" + url
-    r = requests.get(show)
-
-    if r.status_code == 200:
-        data = r.text
-        jsonToPython = json.loads(data)
-        result = jsonToPython['result']
-        if result == None:
-            return -2
-        else:
-            return result
-    else:       
-        return -1
+    # if r.status_code == 200:
+    #     data = r.text
+    #     jsonToPython = json.loads(data)
+    #     result = jsonToPython['result']
+    #     if result == None:
+    #         return -2
+    #     else:
+    #         return result
+    # else:       
+    #     return -1
 
 
 #################################################################################################################################
