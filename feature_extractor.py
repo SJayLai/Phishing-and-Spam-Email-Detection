@@ -9,7 +9,7 @@ Created on Thu May 14 13:23:31 2020
 import content_features as ctnfe
 import url_features as urlfe
 import external_features as trdfe
-import ml_models as models
+# import ml_models as models
 import pandas as pd 
 import urllib.parse
 import tldextract
@@ -20,7 +20,7 @@ import os
 import re
 
 
-from pandas2arff import pandas2arff
+# from pandas2arff import pandas2arff
 from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 
@@ -379,7 +379,7 @@ def extract_features(url, status):
         
         Href, Link, Anchor, Media, Form, CSS, Favicon, IFrame, Title, Text = extract_data_from_URL(hostname, content, domain, Href, Link, Anchor, Media, Form, CSS, Favicon, IFrame, Title, Text)
 
-        row = [url,
+        row = [#url,
                # url-based features
                urlfe.url_length(url),
                urlfe.url_length(hostname),
@@ -417,7 +417,7 @@ def extract_features(url, status):
                urlfe.abnormal_subdomain(url),
                urlfe.count_subdomain(url),
                urlfe.prefix_suffix(url),
-               urlfe.random_domain(domain),
+               #urlfe.random_domain(domain),
                urlfe.shortening_service(url),
                
                
@@ -474,13 +474,14 @@ def extract_features(url, status):
                 # # # thirs-party-based features
                  trdfe.whois_registered_domain(domain),
                  trdfe.domain_registration_length(domain),
-                 trdfe.domain_age(domain),
+                 #trdfe.domain_age(domain),
                  trdfe.web_traffic(url),
                  trdfe.dns_record(domain),
                  trdfe.google_index(url),
                  trdfe.page_rank(key,domain),
                # status
-               status]
+               #status
+               ]
         #print(row)
         return row
     return None
