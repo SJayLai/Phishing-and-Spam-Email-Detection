@@ -8,7 +8,7 @@ class network(nn.Module):
             nn.BatchNorm1d(hidden_units_1),
             nn.Linear(hidden_units_1, hidden_units_1),
             nn.BatchNorm1d(hidden_units_1),
-            nn.Dropout(0.20),
+           
         )
         self.pipeline2 = nn.Sequential(
             nn.Linear(hidden_units_1, hidden_units_2),
@@ -17,7 +17,6 @@ class network(nn.Module):
             nn.Linear(hidden_units_2, hidden_units_2),
             nn.ReLU(),
             nn.BatchNorm1d(hidden_units_2),
-            nn.Dropout(0.20),
             nn.Linear(hidden_units_2, hidden_units_1),
         )
         self.output_pipeline = nn.Sequential(nn.Linear(hidden_units_1, n_outputs))
