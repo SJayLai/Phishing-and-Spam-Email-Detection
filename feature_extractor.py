@@ -84,7 +84,6 @@ def feature_extract_from_url(url):
         domain_in_brand(second_level_domain),
         brand_in_path(second_level_domain, subdomain),
         # statistical_report(url, domain_name),# 有問題
-
         #scheme-based
         https_token(scheme)
     ]

@@ -5,13 +5,13 @@ from torch.optim import Adam
 from torch.utils.data import DataLoader
 
 import numpy as np
+import yaml
 
 from evaluation import eval
 from model import network
 from datasets import PhishDataLoader
 
-import kornia.losses 
-import yaml
+
 
 torch.manual_seed(12)
 np.random.seed(12)
