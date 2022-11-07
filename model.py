@@ -1,6 +1,6 @@
 import torch.nn as nn
 class network(nn.Module):
-    def __init__(self, n_inputs, hidden_units_1, hidden_units_2, n_outputs) -> None:
+    def __init__(self, n_inputs, hidden_units_1=300, hidden_units_2=100, n_outputs=2) -> None:
         super().__init__()
         self.pipeline1 = nn.Sequential(
             nn.Linear(n_inputs, hidden_units_1),

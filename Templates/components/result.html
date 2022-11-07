@@ -1,0 +1,34 @@
+<div class="accordion" id="accordionPanelsStayOpenExample" style="margin-top: 30px; display:{{display}};">
+
+    <div class="accordion-item shadow-sm">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+            Results
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body">
+            <div class="row gap-3">
+                <div class="col p-3 ">Phishing : <br>{{phishing}}</div>
+            </div>
+            <div class="row gap-3">
+                <div class="col p-3">URL: <br>{{url}}</div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+            Screenshot
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+        <div class="accordion-body">
+            <img src="https://api.screenshotmachine.com?key=c04d3a&url={{url}}&dimension=1024x768" style="width: 100%;"/>
+        </div>
+      </div>
+    </div>
+
+  </div>

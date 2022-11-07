@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Document</title>
+    <script>
+        const input = document.getElementById("input");
+         function changeimg() {
+            console.log(input.value)
+            document.getElementById("sh").src = "https://api.screenshotmachine.com?key=c04d3a&url=" + input.value + "&dimension=1024x768";
+         }
+    </script>
+</head>
+<body class="bg-light">
+    
+    <div class="navbar navbar-light justify-content-center">
+        <h1 class="row justify-content-center">
+            Phishing Web Detection 
+            <!-- {{phishing}} {{url}} {{display}} -->
+        </h1>
+    </div>
+    <div class="container-md">
+        {% include 'components/searchbar.html' %}
+        {% include 'components/result.html' %}
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
