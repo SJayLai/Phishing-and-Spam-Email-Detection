@@ -2,3 +2,12 @@ TRAIN_SETTING:
     EPOCHS: 100
     LR: 0.01
     BATCH_SIZE: 1024
+
+MODEL_NAME: XGBoost
+
+TEST_MODEL_LIST: [ 
+                  "AdaBoost",
+                  "LGBM",
+                  "Random_Forest",
+                  "XGBoost"
+                  ]

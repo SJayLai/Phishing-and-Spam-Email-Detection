@@ -1,18 +1,21 @@
 import torch
+import numpy as np
+import pandas as pd
 from sklearn.metrics import classification_report
+from sklearn.preprocessing import StandardScaler
 
-def eval(model, val_loader):
-    ['evaluation']
+def eval(model):
+    ['evaluation'] 
+    csv_file = "data\\urls_feature_val.csv"
+    inputs = pd.read_csv(csv_file).values.astype(np.float32)[:, 1:]
+    data, target = inputs[:, :-1], inputs[:, -1:]
+    s = StandardScaler()
+    data = s.fit_transform(data)
+  
     model.eval()
-    pred_result = []
-    target_result = []
-    for data, target in val_loader:
-        with torch.no_grad():
-            _, pred = model(data).max(dim=-1)
-            _, targ = target.max(dim=-1)
-            pred_result.append(pred.view(-1, 1))
-            target_result.append(targ.view(-1, 1))
+    with torch.no_grad():
+        _, pred = model(torch.from_numpy(data)).max(dim=-1)
+    print(classification_report(target, pred.numpy()))
 
-    pred_result = torch.cat(pred_result, dim=0).view(-1).numpy()
-    target_result = torch.cat(target_result, dim=0).view(-1).numpy()
-    print(classification_report(target_result, pred_result))
+
+
